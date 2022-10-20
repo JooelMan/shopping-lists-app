@@ -1,0 +1,18 @@
+<a href="/">Main page</a>
+
+<h2>Lists</h2>
+
+<h3>Add a list</h3>
+
+<form method="POST" action="/lists">
+  Name: <input type="text" name="name" />
+  <input type="submit" value="Create list!" />
+</form>
+
+<h3>Active lists</h3>
+
+<ul>
+<% it.lists.forEach((list) => { %>
+  <li><a href="lists/<%= list.id %>"><%= list.name %></a></li>
+<% }); %>
+</ul>

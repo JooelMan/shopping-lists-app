@@ -1,0 +1,31 @@
+<a href="/lists">Shopping lists</a>
+
+<h3>List: <%= it.list.name %></h3>
+
+<form method="POST" action="/lists/<%= it.list.id %>/deactivate">
+  <input type="submit" value="Deactivate list!" />
+</form>
+
+<form method="POST" action="/lists/<%= it.list.id %>/items">
+  Name: <input type="text" name="name" />
+  <input type="submit" value="Add an item!" />
+</form>
+
+<h4>Items</h4>
+
+<ul>
+<% it.items.forEach((item) => { %>
+  <li>
+  <%= item.name %>
+  <form method="POST" action="/lists/<%= it.list.id %>/items/<%= item.id %>/collect">
+    <input type="submit" value="Mark collected!" />
+  </form>
+  </li>
+<% }); %>
+</ul>
+
+<ul>
+<% it.collectedItems.forEach((item) => { %>
+  <li><del><%= item.name %></del></li>
+<% }); %>
+</ul>
