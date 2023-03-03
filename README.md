@@ -22,5 +22,5 @@
 
 ### Online testing
 
-Online address of the project is
-'https://shoppinglistswhichareshared.herokuapp.com/'
+- Online address for the project was: 'https://shoppinglistswhichareshared.herokuapp.com/'.
+- Heroku removed their free plans recently -> this application is no longer available online.
